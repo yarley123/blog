@@ -85,5 +85,6 @@ public class ChatLogServiceImpl extends ServiceImpl<ChatLogDao, ChatLog> impleme
         listMap.put("chatLogList", chatLogDTOS);
         listMap.put("voiceIdList", voiceIdList);
         return listMap;
+
     }
 }
