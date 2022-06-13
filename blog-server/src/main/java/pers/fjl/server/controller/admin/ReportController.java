@@ -35,7 +35,7 @@ public class ReportController {
     @ApiOperation(value = "获取数据统计模块1")
     public Result getReport(HttpServletRequest request) throws Exception {
         User user = (User) request.getAttribute("currentUser");
-        return Result.ok("获取博文数据成功!", reportService.getReport(user.getUid()));
+        return Result.ok("获取音乐文章数据成功!", reportService.getReport(user.getUid()));
     }
 
     @LoginRequired
@@ -43,6 +43,6 @@ public class ReportController {
     @ApiOperation(value = "获取数据统计模块1")
     public Result getReport2(HttpServletRequest request) throws Exception {
         User user = (User) request.getAttribute("currentUser");
-        return Result.ok("获取单篇博文分析数据成功!", reportService.getReport2(user.getUid()));
+        return Result.ok("获取单篇音乐文章分析数据成功!", reportService.getReport2(user.getUid()));
     }
 }

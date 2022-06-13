@@ -80,7 +80,7 @@ public class CnnService {
     }
 
     /**
-     * 返回各博客分类的百分比
+     * 返回各音乐文章分类的百分比
      *
      * @param content
      * @return

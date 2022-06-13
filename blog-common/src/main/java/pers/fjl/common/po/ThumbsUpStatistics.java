@@ -21,7 +21,7 @@ public class ThumbsUpStatistics extends Model<ThumbsUpStatistics> {
     private static final long serialVersionUID = 1L;
 
     /**
-     * 访问的博客id
+     * 访问的音乐文章id
      */
     private Long blogId;
 

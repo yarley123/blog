@@ -1,10 +1,10 @@
 
 @[TOC](入站须知)
-# 一.个人博客简介
+# 一.个人音乐文章简介
 项目地址：http://www.tcefrep.site/ （源码地址在本文末尾），感谢阿里云爸爸，送了一个两个月的2核4g的服务器，现在搜索模块也用上了elasticsearch
 ![在这里插入图片描述](https://img-blog.csdnimg.cn/20210327193121530.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0RsaWhjdGNlZnJlcA==,size_16,color_FFFFFF,t_70)
 
-## 1.1 博客主要页面：
+## 1.1 音乐文章主要页面：
 ### &ensp;1.1.1 首页
 ![在这里插入图片描述](https://img-blog.csdnimg.cn/2021032119414418.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0RsaWhjdGNlZnJlcA==,size_16,color_FFFFFF,t_70)
 
@@ -27,7 +27,7 @@
 ![在这里插入图片描述](https://img-blog.csdnimg.cn/20210210160955636.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0RsaWhjdGNlZnJlcA==,size_16,color_FFFFFF,t_70)
 ### &ensp;1.1.8 登录页面
 ![在这里插入图片描述](https://img-blog.csdnimg.cn/20210205214023858.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0RsaWhjdGNlZnJlcA==,size_16,color_FFFFFF,t_70)
-### &ensp;1.1.9 博客详情页面
+### &ensp;1.1.9 音乐文章详情页面
 ![在这里插入图片描述](https://img-blog.csdnimg.cn/20210203202136515.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0RsaWhjdGNlZnJlcA==,size_16,color_FFFFFF,t_70)
 
 ![在这里插入图片描述](https://img-blog.csdnimg.cn/20210203202014905.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0RsaWhjdGNlZnJlcA==,size_16,color_FFFFFF,t_70)
@@ -42,27 +42,27 @@
 ![在这里插入图片描述](https://img-blog.csdnimg.cn/20210520162319335.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0RsaWhjdGNlZnJlcA==,size_16,color_FFFFFF,t_70)
 
 
-## 1.2 博客后台管理页面：
-> &ensp;后台管理主要有三大模块构成：用户管理，博客管理，数据统计构成。
+## 1.2 音乐文章后台管理页面：
+> &ensp;后台管理主要有三大模块构成：用户管理，音乐文章管理，数据统计构成。
 > 
 ![在这里插入图片描述](https://img-blog.csdnimg.cn/20210221202824736.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0RsaWhjdGNlZnJlcA==,size_16,color_FFFFFF,t_70)
 ### &ensp;1.2.1 用户管理模块
 - 个人信息界面
 ![在这里插入图片描述](https://img-blog.csdnimg.cn/20210221204257198.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0RsaWhjdGNlZnJlcA==,size_16,color_FFFFFF,t_70)
 
-### &ensp;1.2.2 博客管理模块
-- 发布博客页面
+### &ensp;1.2.2 音乐文章管理模块
+- 发布音乐文章页面
 ![在这里插入图片描述](https://img-blog.csdnimg.cn/20210221204623704.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0RsaWhjdGNlZnJlcA==,size_16,color_FFFFFF,t_70)
-- 查看博客页面
+- 查看音乐文章页面
 ![在这里插入图片描述](https://img-blog.csdnimg.cn/20210221204704429.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0RsaWhjdGNlZnJlcA==,size_16,color_FFFFFF,t_70)
 - 标签管理
 ![在这里插入图片描述](https://img-blog.csdnimg.cn/20210221204753853.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0RsaWhjdGNlZnJlcA==,size_16,color_FFFFFF,t_70)
 - 分类管理
 ![在这里插入图片描述](https://img-blog.csdnimg.cn/20210221204804881.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0RsaWhjdGNlZnJlcA==,size_16,color_FFFFFF,t_70)
 ### &ensp;1.2.3 数据统计模块
-- 博文数据
+- 音乐文章数据
 ![在这里插入图片描述](https://img-blog.csdnimg.cn/20210221204907962.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0RsaWhjdGNlZnJlcA==,size_16,color_FFFFFF,t_70)
-- 单篇博客分析
+- 单篇音乐文章分析
 ![在这里插入图片描述](https://img-blog.csdnimg.cn/20210221204922316.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0RsaWhjdGNlZnJlcA==,size_16,color_FFFFFF,t_70)
 ## 1.3 网站音乐盒模块（仿网易云）：
 >&emsp; 后花园中的音乐盒有，五个主要模块组成：发现音乐，推荐歌单，最新音乐，最新MV，搜索模块。后台接口调用的是网易云的api
@@ -96,13 +96,13 @@
 ![在这里插入图片描述](https://img-blog.csdnimg.cn/20210520155515445.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0RsaWhjdGNlZnJlcA==,size_16,color_FFFFFF,t_70)
 
 ## 1.5 功能介绍：
-&ensp;本博客简单实现了博客展示、后台管理、发布博客还有评论等功能，其中后台管理、发布博客和评论功能要在用户登录后才可使用，而后台管理的某些功能普通用户只有查看的权限，并没有分配增删改的权限。
-## 1.6 博客介绍
-&ensp;由于博客是由博主一人完成的，所以暂且只做了一些简单的功能，部分地方还是有不完善的地方甚至有bug，欢迎各位在本篇博文下评论处指出。
+&ensp;本音乐文章简单实现了音乐文章展示、后台管理、发布音乐文章还有评论等功能，其中后台管理、发布音乐文章和评论功能要在用户登录后才可使用，而后台管理的某些功能普通用户只有查看的权限，并没有分配增删改的权限。
+## 1.6 音乐文章介绍
+&ensp;由于音乐文章是由博主一人完成的，所以暂且只做了一些简单的功能，部分地方还是有不完善的地方甚至有bug，欢迎各位在本篇音乐文章下评论处指出。
 
 ## 1.7 Tips
 ### &ensp;1.7.1 
-&ensp;编写博客的markdown编辑器在文章过长时，编写栏和预览栏可能会有错位，此时可手动拉动预览栏滚动条）
+&ensp;编写音乐文章的markdown编辑器在文章过长时，编写栏和预览栏可能会有错位，此时可手动拉动预览栏滚动条）
 ### &ensp;1.7.2 
 &ensp;暂未设置图片上传功能，涉及图片的上传和使用建议使用网络地址。推荐的图片地址（https://picsum.photos/images#1），使用的时候，将右侧链接的(https://unsplash.it/100/100?image=1002) ***1002*** 改成自己的图片id即可，100/100是图片的尺寸，即长宽。
 ### &ensp;1.7.3
@@ -152,8 +152,8 @@
 ![在这里插入图片描述](https://img-blog.csdnimg.cn/20210520155833969.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0RsaWhjdGNlZnJlcA==,size_16,color_FFFFFF,t_70)
 
 >项目是由八个模块组成的，
->- blog-common: 博客服务端的实体类
->- blog-encrypt: 博客的服务代理类（从前端接收请求，网关RSA解密后转发给服务端接口）
+>- blog-common: 音乐文章服务端的实体类
+>- blog-encrypt: 音乐文章的服务代理类（从前端接收请求，网关RSA解密后转发给服务端接口）
 > - blog-eureka: 微服务注册中心server
 > - blog-server: 主体服务端
 > - blog-extension: 拓展服务端（留言和友链功能），上线的版本集成了blog-search-api模块，因为阿里云服务器内存太小了

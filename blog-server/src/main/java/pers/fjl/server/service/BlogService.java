@@ -23,15 +23,15 @@ import java.util.List;
 public interface BlogService extends IService<Blog> {
 
     /**
-     * 博客管理的分页数据
+     * 音乐文章管理的分页数据
      * @param queryPageBean
      * @return Page<BlogVO>
      */
     Page<BlogVO> findPage(QueryPageBean queryPageBean, Long uid);
 
     /**
-     * 添加博客
-     * @param addBlogVO 返回博客实体
+     * 添加音乐文章
+     * @param addBlogVO 返回音乐文章实体
      * @return boolean
      */
     Long addOrUpdateBlog(AddBlogVO addBlogVO, Long uid);
@@ -44,46 +44,46 @@ public interface BlogService extends IService<Blog> {
     Page<BlogVO> findHomePage(QueryPageBean queryPageBean);
 
     /**
-     * 根据博客id获取博客
+     * 根据音乐文章id获取音乐文章
      * @param blog_id
      * @return blog
      */
     BlogVO getOneBlog(Long blog_id);
 
     /**
-     * 按照时间降序获取最新推荐的博客列表
+     * 按照时间降序获取最新推荐的音乐文章列表
      * @return list
      */
     List<Blog> getLatestList();
 
     /**
-     * 根据分类id获取博客分页数据
+     * 根据分类id获取音乐文章分页数据
      * @param queryPageBean
      * @return page
      */
     Page<BlogVO> getByTypeId(QueryPageBean queryPageBean);
 
     /**
-     * 更新博客浏览量
-     * @param blogId 博客id
+     * 更新音乐文章浏览量
+     * @param blogId 音乐文章id
      */
     void updateBlogViewsCount(Long blogId);
 
     /**
      * 点赞
-     * @param blogId 博客id
+     * @param blogId 音乐文章id
      * @param uid 用户id
      */
     boolean thumbsUp(Long blogId, Long uid);
 
     /**
-     * 获取博客后台可视化管理数据
-     * @return 博客数据dto
+     * 获取音乐文章后台可视化管理数据
+     * @return 音乐文章数据dto
      */
     BlogBackInfoDTO getBlogBackInfo();
 
     /**
-     * 获取博客后台分页数据
+     * 获取音乐文章后台分页数据
      * @param queryPageBean 分页实体
      * @return page
      */
@@ -111,8 +111,8 @@ public interface BlogService extends IService<Blog> {
     void adminSaveOrUpdateBlog(BlogVO blogVO, Long uid);
 
     /**
-     * 删除博客
-     * @param blogIdList 博客id列表
+     * 删除音乐文章
+     * @param blogIdList 音乐文章id列表
      */
     void deleteBlogs(List<Long> blogIdList);
 

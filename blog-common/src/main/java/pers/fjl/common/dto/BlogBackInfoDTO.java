@@ -11,7 +11,7 @@ import java.util.List;
 
 
 /**
- * 博客后台信息
+ * 音乐文章后台信息
  *
  */
 @Data

@@ -40,7 +40,7 @@ import static pers.fjl.common.constant.RedisConst.BLOG_VIEWS_COUNT;
 
 /**
  * <p>
- * 博客服务实现类
+ * 音乐文章服务实现类
  * </p>
  *
  * @author fangjiale
@@ -109,7 +109,7 @@ public class BlogServiceImpl extends ServiceImpl<BlogDao, Blog> implements BlogS
         List<TypeVO> typeList = typeDao.getTypeCount();
         // 查询标签数据
         List<Tag> tagList = tagDao.selectList(null);
-        // 查询博客浏览量前五
+        // 查询音乐文章浏览量前五
         List<BlogRankDTO> blogRankDTOList = blogDao.selectList(new LambdaQueryWrapper<Blog>()
                 .select(Blog::getBlogId, Blog::getTitle, Blog::getViews)
                 .last("limit 5").orderByDesc(Blog::getViews))
@@ -154,12 +154,14 @@ public class BlogServiceImpl extends ServiceImpl<BlogDao, Blog> implements BlogS
         // 保存文章分类
         Type type = saveType(blogVO);
         // 修改文章
-        Blog blog = BeanCopyUtils.copyObject(blogVO, Blog.class);
+        Blog blog = new Blog();
+        BeanUtils.copyProperties(blogVO,blog);
         if (Objects.nonNull(type)) {
             blog.setTypeId(type.getTypeId());
         }
         blog.setUid(uid);
         blog.setContent(SensitiveFilter.filter(blog.getContent()));
+        blog.setFirstPicture(isImagesTrue("https://bishe202206.oss-cn-beijing.aliyuncs.com/"+blog.getFirstPicture()));
         blogService.saveOrUpdate(blog);
         // 保存文章标签
         saveBlogTag(blogVO, blog.getBlogId());
@@ -168,7 +170,7 @@ public class BlogServiceImpl extends ServiceImpl<BlogDao, Blog> implements BlogS
     /**
      * 保存文章分类
      *
-     * @param BlogVO 文章信息
+     * @param
      * @return {@link Type} 文章分类
      */
     private Type saveType(BlogVO blogVO) {
@@ -256,22 +258,22 @@ public class BlogServiceImpl extends ServiceImpl<BlogDao, Blog> implements BlogS
         Blog blog = new Blog();
         BeanUtils.copyProperties(addBlogVO, blog);
         blog.setUid(uid);
-        if (addBlogVO.getBlogId() == null || Objects.isNull(addBlogVO.getBlogId())) {   //代表是添加博客
+        if (addBlogVO.getBlogId() == null || Objects.isNull(addBlogVO.getBlogId())) {   //代表是添加音乐文章
             Long blogId = IdWorker.getId(Blog.class);
             blog.setBlogId(blogId);
-        } else {    //更新博客
+        } else {    //更新音乐文章
             blogTagService.remove(new LambdaQueryWrapper<BlogTag>().eq(BlogTag::getBlogId, blog.getBlogId()));
         }
-        blog.setFirstPicture(isImagesTrue(blog.getFirstPicture()));
+        blog.setFirstPicture(isImagesTrue("https://bishe202206.oss-cn-beijing.aliyuncs.com/"+blog.getFirstPicture()));
         blog.setContent(SensitiveFilter.filter(blog.getContent()));
         blogService.saveOrUpdate(blog);
-        // 还要插入标签与博客的中间表
+        // 还要插入标签与音乐文章的中间表
         blogTagService.addOneBlogTag(blog.getBlogId(), addBlogVO.getValue());
         return blog.getBlogId();
     }
 
     /**
-     * 添加或删除博客后，每页显示的博客都会发生变化，整个分页map都需要更新，所以得删除
+     * 添加或删除音乐文章后，每页显示的音乐文章都会发生变化，整个分页map都需要更新，所以得删除
      *
      * @param queryPageBean 分页实体
      * @return page
@@ -293,7 +295,7 @@ public class BlogServiceImpl extends ServiceImpl<BlogDao, Blog> implements BlogS
     public BlogVO getOneBlog(Long blogId) {
         QueryWrapper<Blog> wrapper = new QueryWrapper<>();
         wrapper.eq("blog_id", blogId);
-        // 返回的博客要含有昵称，所以要用vo
+        // 返回的音乐文章要含有昵称，所以要用vo
         Blog blog = blogDao.selectOne(wrapper);
         BlogVO blogVO = new BlogVO();
         User user = userService.getById(blog.getUid());
@@ -304,14 +306,14 @@ public class BlogServiceImpl extends ServiceImpl<BlogDao, Blog> implements BlogS
         blogVO.setTagNameList(tagDao.getBlogTagList(blogId).stream().map(Tag::getTagName).collect(Collectors.toList()));
         if (content != null) {
             blogVO.setContent(MarkdownUtils.markdownToHtmlExtensions(content));
-        }   // 将博客对象中的正文内容markdown格式的文本转换成html元素格式
+        }   // 将音乐文章对象中的正文内容markdown格式的文本转换成html元素格式
         return blogVO;
     }
 
     /**
-     * 更新博客浏览量,在当前页面连接里，同一篇文章第二次访问就不再添加浏览量
+     * 更新音乐文章浏览量,在当前页面连接里，同一篇文章第二次访问就不再添加浏览量
      *
-     * @param blogId 博客id
+     * @param blogId 音乐文章id
      */
     @Async
     public void updateBlogViewsCount(Long blogId) {
@@ -363,7 +365,7 @@ public class BlogServiceImpl extends ServiceImpl<BlogDao, Blog> implements BlogS
         wrapper.eq("blog_id", blogId)
                 .eq("uid", uid);
         Blog blogDB = blogDao.selectById(blogId);
-        if (thumbsUpDao.selectCount(wrapper) != 0) { // 该用户已点赞过该篇博客
+        if (thumbsUpDao.selectCount(wrapper) != 0) { // 该用户已点赞过该篇音乐文章
             thumbsUpDao.delete(wrapper);
             blogDB.setThumbs(blogDB.getThumbs() - 1);
             blogDao.updateById(blogDB);
@@ -412,7 +414,7 @@ public class BlogServiceImpl extends ServiceImpl<BlogDao, Blog> implements BlogS
      * @return 图片url
      */
     public String isImagesTrue(String postUrl) {
-        if (postUrl.contains("tcefrep.oss-cn-beijing.aliyuncs.com")) {   //本人的oss地址，就无需检验图片有效性
+        if (postUrl.contains("bishe202206.oss-cn-beijing.aliyuncs.com")) {   //本人的oss地址，就无需检验图片有效性
             return postUrl;
         }
         int max = 1000;
@@ -463,13 +465,13 @@ public class BlogServiceImpl extends ServiceImpl<BlogDao, Blog> implements BlogS
     @Override
     @Transactional
     public void deleteBlogs(List<Long> blogIdList) {
-        blogTagDao.delete(new LambdaQueryWrapper<BlogTag>() //删除博客标签的中间表数据
+        blogTagDao.delete(new LambdaQueryWrapper<BlogTag>() //删除音乐文章标签的中间表数据
                 .in(BlogTag::getBlogId, blogIdList));
-        // 删除博客的点赞和收藏信息
+        // 删除音乐文章的点赞和收藏信息
         thumbsUpDao.delete(new LambdaQueryWrapper<ThumbsUp>().in(ThumbsUp::getBlogId, blogIdList));
         favoritesDao.delete(new LambdaQueryWrapper<Favorites>().in(Favorites::getBlogId, blogIdList));
-        commentDao.delete(new LambdaQueryWrapper<Comment>().in(Comment::getBlogId, blogIdList));// 删除博客下的所有评论数据
-        blogDao.deleteBatchIds(blogIdList); //删除博客
+        commentDao.delete(new LambdaQueryWrapper<Comment>().in(Comment::getBlogId, blogIdList));// 删除音乐文章下的所有评论数据
+        blogDao.deleteBatchIds(blogIdList); //删除音乐文章
     }
 
 

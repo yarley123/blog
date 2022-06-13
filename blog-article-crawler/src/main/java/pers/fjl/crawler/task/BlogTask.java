@@ -11,7 +11,7 @@ import us.codecraft.webmagic.Spider;
 import javax.annotation.Resource;
 
 /**
- * 博客任务类
+ * 音乐文章任务类
  */
 @Component
 public class BlogTask {

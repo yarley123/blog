@@ -19,7 +19,7 @@ import java.time.LocalDateTime;
 
 /**
  * <p>
- * 从CSDN上爬取下来的博客实体类
+ * 从CSDN上爬取下来的音乐文章实体类
  * </p>
  *
  * @author fangjiale
@@ -33,7 +33,7 @@ public class CrawledBlog extends Model<CrawledBlog> {
     private static final long serialVersionUID = 1L;
 
     /**
-     * 博客id
+     * 音乐文章id
      */
     @JsonSerialize(using = JsonLongSerializer.class)
     @TableId(value = "blog_id")

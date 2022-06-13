@@ -21,13 +21,13 @@ import java.util.List;
 public interface TagDao extends BaseMapper<Tag> {
 
     /**
-     * 获取每个标签的博客数量
+     * 获取每个标签的音乐文章数量
      * @return list
      */
     List<TagVO> getTagCount();
 
     /**
-     * 获取单个博客的tagList
+     * 获取单个音乐文章的tagList
      * @param blogId
      * @return
      */

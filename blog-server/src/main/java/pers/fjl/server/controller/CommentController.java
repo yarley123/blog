@@ -36,7 +36,7 @@ public class CommentController {
     private CommentService commentService;
 
     @ApiImplicitParams({
-            @ApiImplicitParam(name = "blogId", value = "博客id", type = "Long", required = true)
+            @ApiImplicitParam(name = "blogId", value = "音乐文章id", type = "Long", required = true)
     })
     @ApiOperation(value = "根据blogId查找评论")
     @GetMapping("/commentList/{blogId}")

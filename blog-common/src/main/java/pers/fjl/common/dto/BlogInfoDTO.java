@@ -8,7 +8,7 @@ import lombok.NoArgsConstructor;
 
 
 /**
- * 网站博文数据
+ * 网站音乐文章数据
  *
  */
 @Data

@@ -8,7 +8,7 @@ import pers.fjl.common.vo.BlogVO;
 
 /**
  * <p>
- *  标签博客中间表服务类
+ *  标签音乐文章中间表服务类
  * </p>
  *
  * @author fangjiale
@@ -19,7 +19,7 @@ public interface BlogTagService extends IService<BlogTag> {
     boolean addOneBlogTag(Long blogId, Integer[] value);
 
     /**
-     * 根据标签id获取博客分页数据
+     * 根据标签id获取音乐文章分页数据
      * @param queryPageBean
      * @return page
      */

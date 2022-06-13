@@ -59,7 +59,7 @@ public class UserController {
     @ApiOperation(value = "删除用户", notes = "删除用户")
     public Result delete(@RequestBody List<Long> uidList) {
         userService.delete(uidList);
-        return Result.ok("该用户以及与该用户发布的博客、评论等有关的信息都已删除");
+        return Result.ok("该用户以及与该用户发布的音乐文章、评论等有关的信息都已删除");
     }
 
     @ApiOperation(value = "用户更新个人信息", notes = "用户更新个人信息")

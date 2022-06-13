@@ -42,8 +42,8 @@ public class PoemServiceImpl implements PoemService {
         String[] arguments = new String[]{pythonPath, pyPath, methodNo, words};
         try {
             Process process = Runtime.getRuntime().exec(arguments);
-            BufferedReader in = new BufferedReader(new InputStreamReader(process.getInputStream(), StandardCharsets.UTF_8));
-            BufferedReader stderrReader = new BufferedReader(new InputStreamReader(process.getErrorStream(), StandardCharsets.UTF_8));
+            BufferedReader in = new BufferedReader(new InputStreamReader(process.getInputStream(), "GBK"));
+            BufferedReader stderrReader = new BufferedReader(new InputStreamReader(process.getErrorStream(), "GBK"));
             String line = null;
             while ((line = in.readLine()) != null) {
                 result = line;
@@ -54,7 +54,7 @@ public class PoemServiceImpl implements PoemService {
                 while ((myString = stderrReader.readLine()) != null) {
                     log.error("PythonException:[{}]", myString);
                 }
-                throw new BizException("python脚本出错了");
+                throw new RuntimeException("python脚本出错了");
             }
 
         } catch (Exception e) {

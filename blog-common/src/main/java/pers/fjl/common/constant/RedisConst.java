@@ -34,7 +34,7 @@ public class RedisConst {
     public static final Integer HOUR = 3600;
 
     /**
-     * 博客浏览量
+     * 音乐文章浏览量
      */
     public static final String BLOG_VIEWS_COUNT = "blog_views_count";
 

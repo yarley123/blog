@@ -185,7 +185,7 @@ public class ChatEndpoint {
      */
     public HashMap<String, String> sendVoice(VoiceVO voiceVO) {
         // 上传语音文件
-        String content = uploadStrategyContext.executeUploadStrategy(voiceVO.getFile(), FilePathEnum.VOICE.getPath());
+        String content = "https://bishe202206.oss-cn-beijing.aliyuncs.com/"+uploadStrategyContext.executeUploadStrategy(voiceVO.getFile(), FilePathEnum.VOICE.getPath());
         voiceVO.setContent(content);
         Long msgId = IdWorker.getId(ChatLog.class);
         HashMap<String, String> map = new HashMap<>();

@@ -6,7 +6,7 @@ import us.codecraft.webmagic.Site;
 import us.codecraft.webmagic.processor.PageProcessor;
 
 /**
- * 博客爬取类
+ * 音乐文章爬取类
  */
 @Component
 public class BlogProcessor implements PageProcessor {

@@ -29,7 +29,7 @@ import static pers.fjl.common.constant.OptTypeConst.REMOVE;
  * @author fangjiale 2021年01月27日
  */
 
-@Api(value = "博客管理模块", description = "博客管理模块的接口信息")
+@Api(value = "音乐文章管理模块", description = "音乐文章管理模块的接口信息")
 @RequestMapping("/blog")
 @RestController
 @CrossOrigin
@@ -52,7 +52,7 @@ public class BlogController {
     }
 
     @LoginRequired
-    @ApiOperation(value = "用户添加或更新博客")
+    @ApiOperation(value = "用户添加或更新音乐文章")
     @PostMapping("/admin/addOrUpdate")
     public Result addOrUpdate(@RequestBody AddBlogVO addBlogVO, HttpServletRequest request) {
         User user = (User) request.getAttribute("currentUser");
@@ -61,11 +61,11 @@ public class BlogController {
         //发消息给mq然后同步es
         amqpTemplate.convertAndSend(RabbitMQConst.esExchange, RabbitMQConst.esBingKey,
                 new PostMqIndexMessage(blogId, PostMqIndexMessage.CREATE_OR_UPDATE));
-        return Result.ok("添加或更新博客成功");
+        return Result.ok("添加或更新音乐文章成功");
     }
 
     @LoginRequired
-    @ApiOperation(value = "管理员更新或发布博客")
+    @ApiOperation(value = "管理员更新或发布音乐文章")
     @PostMapping("/admin/saveOrUpdate")
     public Result adminSaveOrUpdateBlog(@RequestBody BlogVO blogVO, HttpServletRequest request) {
         User user = (User) request.getAttribute("currentUser");
@@ -74,21 +74,21 @@ public class BlogController {
     }
 
     @OptLog(optType = REMOVE)
-    @ApiOperation(value = "管理员删除博客")
+    @ApiOperation(value = "管理员删除音乐文章")
     @DeleteMapping("/admin/delete")
     public Result deleteBlogs(@RequestBody List<Long> blogIdList) {
         blogService.deleteBlogs(blogIdList);
         PostMqIndexMessage postMqIndexMessage = new PostMqIndexMessage();
         postMqIndexMessage.setBlogIdList(blogIdList).setType(PostMqIndexMessage.REMOVE);
         amqpTemplate.convertAndSend(RabbitMQConst.esExchange, RabbitMQConst.esBingKey, postMqIndexMessage);
-        return Result.ok("删除博客成功");
+        return Result.ok("删除音乐文章成功");
     }
 
-    @ApiOperation(value = "根据id获取博客的信息")
+    @ApiOperation(value = "根据id获取音乐文章的信息")
     @GetMapping("/{blogId}")
     public Result getOneBlog(@PathVariable("blogId") Long blogId) {
         blogService.updateBlogViewsCount(blogId);
-        return Result.ok("获取博客信息成功", blogService.getOneBlog(blogId));
+        return Result.ok("获取音乐文章信息成功", blogService.getOneBlog(blogId));
     }
 
     @ApiOperation(value = "点赞")
@@ -130,7 +130,7 @@ public class BlogController {
      *
      * @return 后台信息
      */
-    @ApiOperation(value = "后台获取博客信息")
+    @ApiOperation(value = "后台获取音乐文章信息")
     @GetMapping("/admin/blogPage")
     public Result adminBlogPage(QueryPageBean queryPageBean) {
         return Result.ok("获取后台信息成功", blogService.adminBlogPage(queryPageBean));
@@ -144,7 +144,7 @@ public class BlogController {
         return Result.ok("获取分页数据成功", blogService.findFavoritesPage(queryPageBean, user.getUid()));
     }
 
-    @ApiOperation(value = "博文信息", notes = "博文信息")
+    @ApiOperation(value = "音乐文章信息", notes = "音乐文章信息")
     @GetMapping("/blogInfo")
     public Result blogInfo() {
         return Result.ok("获取分页数据成功", blogService.blogInfo());

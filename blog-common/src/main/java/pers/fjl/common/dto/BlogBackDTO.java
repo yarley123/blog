@@ -29,7 +29,7 @@ import java.util.List;
 public class BlogBackDTO {
 
     /**
-     * 博客id
+     * 音乐文章id
      */
     @JsonSerialize(using = JsonLongSerializer.class)
     private Long blogId;

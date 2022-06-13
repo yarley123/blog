@@ -60,7 +60,7 @@ public class TagController {
     @ApiOperation(value = "搜索标签", notes = "返回分页数据")
     @GetMapping("/admin/search")
     public Result searchTags(QueryPageBean queryPageBean){
-        return Result.ok("搜索成功", tagService. searchTags(queryPageBean));
+        return Result.ok("搜索成功", tagService.searchTags(queryPageBean));
     }
 
     @OptLog(optType = SAVE_OR_UPDATE)

@@ -1,10 +1,9 @@
 eureka:
   client:
     service-url:
-      defaultZone: http://39.108.136.207:8686/eureka/
+      defaultZone: http://8.141.158.3:8686/eureka/
   instance:
     prefer-ip-address: true
 spring:
   redis:
-    host: 39.108.136.207
-    password: kllxdwh
+    host: 8.141.158.3

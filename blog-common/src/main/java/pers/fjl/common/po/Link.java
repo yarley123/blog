@@ -52,7 +52,7 @@ public class Link extends Model<Link> {
     private String blogLink;
 
     /**
-     * 友链博客描述
+     * 友链音乐文章描述
      */
     private String description;
 

@@ -26,7 +26,7 @@ public interface TagService extends IService<Tag> {
     List<Tag> getTagList();
 
     /**
-     * 获取每个分类的博客数量
+     * 获取每个分类的音乐文章数量
      *
      * @return list
      */

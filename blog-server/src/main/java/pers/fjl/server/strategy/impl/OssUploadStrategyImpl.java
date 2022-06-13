@@ -2,11 +2,13 @@ package pers.fjl.server.strategy.impl;
 
 import com.aliyun.oss.OSS;
 import com.aliyun.oss.OSSClientBuilder;
+import com.aliyun.oss.model.ObjectMetadata;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import pers.fjl.server.utils.OssConfigProperties;
 
 import java.io.InputStream;
+import java.util.Date;
 
 /**
  * oss上传策略
@@ -24,7 +26,9 @@ public class OssUploadStrategyImpl extends AbstractUploadStrategyImpl {
 
     @Override
     public void upload(String path, String fileName, InputStream inputStream) {
-        getOssClient().putObject(ossConfigProperties.getBucketName(), path + fileName, inputStream);
+        ObjectMetadata meta = new ObjectMetadata();
+        meta.setContentType("image/jpg");
+        getOssClient().putObject(ossConfigProperties.getBucketName(), path + fileName, inputStream,meta);
     }
 
     @Override

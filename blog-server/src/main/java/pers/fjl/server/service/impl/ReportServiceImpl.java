@@ -14,7 +14,7 @@ import java.util.*;
 
 /**
  * <p>
- * 博文数据服务实现类
+ * 音乐文章数据服务实现类
  * </p>
  *
  * @author fangjiale
@@ -152,7 +152,7 @@ public class ReportServiceImpl implements ReportService {
         Integer[] data = new Integer[3];
         QueryWrapper<Comment> wrapper = new QueryWrapper<>();
         wrapper.eq("blog_id", blog.getBlogId());
-        Integer count = commentDao.selectCount(wrapper);    // 获取每篇博客的评论条数
+        Integer count = commentDao.selectCount(wrapper);    // 获取每篇音乐文章的评论条数
         data[0] = blog.getThumbs();
         data[1] = count;
         data[2] = blog.getViews();

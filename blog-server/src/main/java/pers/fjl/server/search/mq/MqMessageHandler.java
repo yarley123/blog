@@ -29,13 +29,13 @@ public class MqMessageHandler {
         switch (message.getType()){
             case PostMqIndexMessage.CREATE_OR_UPDATE:
                 blogInfoService.createOrUpdate(message);
-                log.info("es添加或更新博客数据，id为:{}", message.getBlogId());
+                log.info("es添加或更新音乐文章数据，id为:{}", message.getBlogId());
                 break;
             case PostMqIndexMessage.REMOVE:
                 List<BlogInfo> blogInfoList = message.getBlogIdList().stream().map(blogId -> BlogInfo.builder().blogId(blogId).build()
                 ).collect(Collectors.toList());
                 blogInfoMapper.deleteAll(blogInfoList);
-                log.info("es删除博客数据，id为:{}", blogInfoList);
+                log.info("es删除音乐文章数据，id为:{}", blogInfoList);
                 break;
             default:
                 log.error("没找到对应的消息类型，请注意 {}",message.toString());

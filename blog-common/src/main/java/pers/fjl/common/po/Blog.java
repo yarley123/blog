@@ -24,21 +24,21 @@ import pers.fjl.common.utils.JsonLongSerializer;
 
 /**
  * <p>
- * 博客实体类
+ * 音乐文章实体类
  * </p>
  *
  * @author fangjiale
  * @since 2021-01-27
  */
 @Data
-@ApiModel(value = "博客实体", description = "博客实体")
+@ApiModel(value = "音乐文章实体", description = "音乐文章实体")
 @EqualsAndHashCode(callSuper = false)
 public class Blog extends Model<Blog> {
 
     private static final long serialVersionUID = 1L;
 
     /**
-     * 博客id
+     * 音乐文章id
      */
     @JsonSerialize(using = JsonLongSerializer.class)
     @TableId(value = "blog_id")
@@ -121,7 +121,7 @@ public class Blog extends Model<Blog> {
     private Long uid;
 
     /**
-     * 博客摘要
+     * 音乐文章摘要
      */
     private String description;
 

@@ -147,6 +147,7 @@ public class UserServiceImpl extends ServiceImpl<UserDao, User> implements UserS
             return false;
         }
         Long uid = IdWorker.getId(User.class);
+        user.setAvatar("https://bishe202206.oss-cn-beijing.aliyuncs.com/"+user.getAvatar());
         user.setUid(uid);
         user.setStatus(MessageConstant.USER_ABLE);
         user.setPassword(encoder.encode(user.getPassword()));
@@ -166,7 +167,7 @@ public class UserServiceImpl extends ServiceImpl<UserDao, User> implements UserS
      * @return url
      */
     public String isImagesTrue(String postUrl) {
-        if (postUrl.contains("tcefrep.oss-cn-beijing.aliyuncs.com")) {   //本人的oss地址，就无需检验图片有效性
+        if (postUrl.contains("bishe202206.oss-cn-beijing.aliyuncs.com")) {   //本人的oss地址，就无需检验图片有效性
             return postUrl;
         }
         int max = 1000;
@@ -207,6 +208,7 @@ public class UserServiceImpl extends ServiceImpl<UserDao, User> implements UserS
 
     @CacheEvict(value = {"UserMap"}, key = "#updateUserVO.getUid()")
     public boolean updateUser(UpdateUserVO updateUserVO) {
+        updateUserVO.setAvatar("https://bishe202206.oss-cn-beijing.aliyuncs.com/"+updateUserVO.getAvatar());
         String realCode = (String) redisUtil.get(USER_CODE_KEY + updateUserVO.getEmail());    // 先验证邮箱验证码是否正确
         if (!realCode.equals(updateUserVO.getCode())) {
             throw new BizException("您输入的邮箱验证码不正确");
@@ -349,7 +351,7 @@ public class UserServiceImpl extends ServiceImpl<UserDao, User> implements UserS
     @CacheEvict(value = {"UserListMap"})
     @Override
     public void delete(List<Long> uidList) {
-        // 先删除该用户发布的所有博客
+        // 先删除该用户发布的所有音乐文章
         blogDao.delete(new LambdaQueryWrapper<Blog>().in(Blog::getUid, uidList));
         // 删除用户发表过的评论
         commentService.remove(new LambdaQueryWrapper<Comment>().in(Comment::getUid, uidList));

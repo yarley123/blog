@@ -27,7 +27,7 @@ public class BlogInfo {
     private static final long serialVersionUID = 1L;
 
     /**
-     * 博客id
+     * 音乐文章id
      */
     @Id
     private Long blogId;
@@ -49,7 +49,7 @@ public class BlogInfo {
     private String content;
 
     /**
-     * 博客摘要
+     * 音乐文章摘要
      */
     @Field(type = FieldType.Text, index = true, analyzer = "ik_max_word", searchAnalyzer = "ik_smart", store = true)
     private String description;

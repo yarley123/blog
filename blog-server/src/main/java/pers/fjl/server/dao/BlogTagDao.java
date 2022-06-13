@@ -20,7 +20,7 @@ import java.util.List;
 @Repository
 public interface BlogTagDao extends BaseMapper<BlogTag> {
     /**
-     * 根据标签类型获取博客列表
+     * 根据标签类型获取音乐文章列表
      * @param start
      * @param pageSize
      * @return

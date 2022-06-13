@@ -21,7 +21,7 @@ import java.util.List;
 public interface TypeDao extends BaseMapper<Type> {
 
     /**
-     * 获取每个分类的博客数量
+     * 获取每个分类的音乐文章数量
      * @return 分类数据
      */
     List<TypeVO> getTypeCount();

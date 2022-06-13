@@ -10,9 +10,10 @@ spring:
     name: blog-server #指定服务名
   mail:
     host: smtp.qq.com
-    username: 1626680964@qq.com
-    password:
+    username: 271782@qq.com
+    password: jqafnevmstizbjad
     default-encoding: UTF-8
+    from: 271782@qq.com
 #    port: 587
 #    properties:
 #      mail:
@@ -23,7 +24,7 @@ spring:
   rabbitmq:
     username: guest
     password: guest
-    host: ip
+    host: 127.0.0.1
     port: 5672
   data:
     elasticsearch:
@@ -32,7 +33,7 @@ spring:
       repositories:
         enabled: true
 es:
-  host: ip
+  host: 127.0.0.1
 
 # Mybatis-Plus 配置
 mybatis-plus:
@@ -64,11 +65,11 @@ upload:
     path:
   oss:
     file:
-      url:
-      bucketName:
-      endpoint:
-      keyId:
-      keySecret:
+      url: #https://bishe202206.oss-cn-beijing.aliyuncs.com/
+      bucketName: bishe202206
+      endpoint: oss-cn-beijing.aliyuncs.com
+      keyId: LTAI5tHRJVSuzp3SpsQs6KTw
+      keySecret: ksEtbzM6ysuplPQnYmR6zCG6klxJkQ
 
 face:
   group-id:
@@ -76,9 +77,9 @@ face:
 
 #第三方配置信息
 qq:
-  app-id:
-  app_KEY:
-  redirect_URI :
+  app-id: 102008769
+  app_KEY: 34ScuMfn01d2LBWg
+  redirect_URI : http://www.cutewink.cool/myqq
   check-token-url: https://graph.qq.com/oauth2.0/me?access_token={access_token}
   user-info-url: https://graph.qq.com/user/get_user_info?openid={openid}&access_token={access_token}&oauth_consumer_key={oauth_consumer_key}
 

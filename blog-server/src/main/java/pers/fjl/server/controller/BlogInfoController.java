@@ -14,7 +14,7 @@ import java.io.IOException;
 
 @RestController
 @CrossOrigin
-@Api(tags = "博客主页控制器")
+@Api(tags = "音乐文章主页控制器")
 @RequestMapping(value = "/search")
 public class BlogInfoController {
 

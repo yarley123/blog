@@ -5,5 +5,5 @@ import pers.fjl.common.po.Blog;
 
 @Data
 public class AddBlogVO extends Blog {
-    private Integer[] value; // 存放的是博客对应的标签列表
+    private Integer[] value; // 存放的是音乐文章对应的标签列表
 }

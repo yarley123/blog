@@ -52,7 +52,7 @@ public class HomeController {
     }
 
     @GetMapping("/latestList")
-    @ApiOperation(value = "首页最新博文列表", notes = "返回最新博文列表")
+    @ApiOperation(value = "首页最新音乐文章列表", notes = "返回最新音乐文章列表")
     public Result getRecommendList() {
         return Result.ok( "获取最新推荐信息成功", blogService.getLatestList());
     }

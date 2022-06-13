@@ -22,7 +22,7 @@ public class Favorites extends Model<Favorites> {
     private static final long serialVersionUID = 1L;
 
     /**
-     * 博客id
+     * 音乐文章id
      */
     @JsonSerialize(using = JsonLongSerializer.class)
     private Long blogId;

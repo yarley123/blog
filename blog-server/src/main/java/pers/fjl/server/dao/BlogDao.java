@@ -24,7 +24,7 @@ import java.util.List;
 public interface BlogDao extends BaseMapper<Blog> {
 
     /**
-     * 获取对应用户的博客列表(多表查询)
+     * 获取对应用户的音乐文章列表(多表查询)
      *
      * @param
      * @return List
@@ -35,7 +35,7 @@ public interface BlogDao extends BaseMapper<Blog> {
     List<BlogVO> getAllBlogs(Long uid, Integer start, Integer pageSize);
 
     /**
-     * 获取博客列表(多表查询)
+     * 获取音乐文章列表(多表查询)
      *
      * @param
      * @return List
@@ -54,7 +54,7 @@ public interface BlogDao extends BaseMapper<Blog> {
     List<BlogStatisticsDTO> listArticleStatistics();
 
     /**
-     * 获取后台博客列表
+     * 获取后台音乐文章列表
      * @param queryPageBean 分页实体
      * @return list
      */
@@ -69,7 +69,7 @@ public interface BlogDao extends BaseMapper<Blog> {
     List<BlogVO> findFavoritesPage(@Param("queryPageBean")  QueryPageBean queryPageBean, @Param("uid") Long uid);
 
     /**
-     * 获取管理后台对应博文数量
+     * 获取管理后台对应音乐文章数量
      * @param queryPageBean 分页实体
      * @return 用户id
      */

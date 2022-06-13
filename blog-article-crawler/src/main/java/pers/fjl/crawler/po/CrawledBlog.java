@@ -16,7 +16,7 @@ import org.springframework.format.annotation.DateTimeFormat;
 
 /**
  * <p>
- * 从CSDN上爬取下来的博客实体类
+ * 从CSDN上爬取下来的音乐文章实体类
  * </p>
  *
  * @author fangjiale

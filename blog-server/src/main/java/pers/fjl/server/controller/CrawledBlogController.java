@@ -12,7 +12,7 @@ import javax.annotation.Resource;
 
 /**
  * <p>
- * 爬取的博客页面控制器
+ * 爬取的音乐文章页面控制器
  * </p>
  *
  * @author fangjiale
@@ -33,7 +33,7 @@ public class CrawledBlogController {
 
     @GetMapping("/{blogId}")
     public Result getOneBlog(@PathVariable("blogId") Long blogId) {
-        return Result.ok("获取博客信息成功", crawledBlogService.getOneBlog(blogId));
+        return Result.ok("获取音乐文章信息成功", crawledBlogService.getOneBlog(blogId));
     }
 }
 

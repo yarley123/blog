@@ -17,7 +17,7 @@ public class TrainTask {
     private CnnService cnnService;
 
 //    /**
-//     * 训练博客分类模型
+//     * 训练音乐文章分类模型
 //     */
 //    @Scheduled(cron = "39 01 00 * * ?")
 //    public void trainBlogModel() {

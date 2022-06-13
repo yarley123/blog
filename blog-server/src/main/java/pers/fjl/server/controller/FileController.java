@@ -48,7 +48,7 @@ public class FileController {
     @PostMapping("/chatLogImg")
     @ApiOperation(value = "聊天发送图片")
     public Result chatLogImg(MultipartFile file) {
-        String url = uploadStrategyContext.executeUploadStrategy(file,"chatLogImg/");
+        String url = "https://bishe202206.oss-cn-beijing.aliyuncs.com/"+uploadStrategyContext.executeUploadStrategy(file,"chatLogImg/");
         HashMap<String, String> map = new HashMap<>();
         map.put("url", url);
         return Result.ok("上传成功", map);
